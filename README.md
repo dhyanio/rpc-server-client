@@ -17,3 +17,8 @@ Did you see the magic? The client is running as an independent program from the 
 Here, both the programs can be on different machines, and computing can still be shared.
 This is the core concept of distributed systems. The tasks are divided and given to various
 RPC servers. Finally, the client collects the results and uses them to take further decisions.
+
+Custom RPC code is only useful when the client and server are both written in Go. So, in
+order to have the RPC server consumed by multiple services, we need to define the JSON-
+RPC over HTTP. Then, any other programming language can send a JSON string and get
+JSON as the result back.
