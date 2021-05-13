@@ -12,3 +12,8 @@ another place or geographical region.
 - The server executes the remote process
 - The message will be sent back to the client
 - The client collects the data from the request and uses it appropriately
+
+Did you see the magic? The client is running as an independent program from the server.
+Here, both the programs can be on different machines, and computing can still be shared.
+This is the core concept of distributed systems. The tasks are divided and given to various
+RPC servers. Finally, the client collects the results and uses them to take further decisions.
