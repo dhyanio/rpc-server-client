@@ -22,3 +22,16 @@ Custom RPC code is only useful when the client and server are both written in Go
 order to have the RPC server consumed by multiple services, we need to define the JSON-
 RPC over HTTP. Then, any other programming language can send a JSON string and get
 JSON as the result back.
+
+## JSON-RPC using Gorilla RPC
+We saw that the Gorilla toolkit helps us by providing many useful libraries. It has libraries
+such as Mux for routing, Handlers for middleware, and now, the gorilla/rpc library.
+Using this, we can create RPC servers and clients that talk using JSON instead of a custom
+reply pointer. Let's convert the preceding example into a much more useful one.
+
+
+Consider this scenario. We have a JSON file on the server that has details of books (name,
+ID, author). The client requests book information by making an HTTP request. When the
+RPC server receives the request, it reads the file from the filesystem and parses it. If the
+given ID matches any book, then the server sends the information back to the client in
+JSON format. Let's look at the steps here:
